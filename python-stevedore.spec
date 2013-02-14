@@ -1,6 +1,6 @@
 Name:           python-stevedore
 Version:        0.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -30,6 +30,9 @@ Manage dynamic plugins for Python applications
 %{python_sitelib}/stevedore-%{version}-py?.?.egg-info
 
 %changelog
+* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.8-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Mon Jan  7 2013 Pádraig Brady <P@draigBrady.com> - 0.8-1
 - Update to version 0.8
 
