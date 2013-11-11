@@ -1,5 +1,5 @@
 Name:           python-stevedore
-Version:        0.11
+Version:        0.12
 Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
@@ -11,6 +11,7 @@ BuildArch:      noarch
 
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
+BuildRequires:  python-pbr
 
 %description
 Manage dynamic plugins for Python applications
@@ -30,6 +31,10 @@ Manage dynamic plugins for Python applications
 %{python_sitelib}/stevedore-%{version}-py?.?.egg-info
 
 %changelog
+* Mon Nov 11 2013 Matthias Runge <mrunge@redhat.com> - 0.12-1
+- update to version 0.12
+- fix FTBFS (rhbz#993170)
+
 * Thu Sep 12 2013 Pádraig Brady <pbrady@redhat.com> - 0.11-1
 - update to version 0.11
 
