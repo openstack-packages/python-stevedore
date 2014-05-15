@@ -4,7 +4,7 @@
 
 Name:           python-stevedore
 Version:        0.15
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -89,6 +89,9 @@ popd
 %{python3_sitelib}/stevedore-%{version}-py?.?.egg-info
 
 %changelog
+* Wed May 14 2014 Bohuslav Kabrda <bkabrda@redhat.com> - 0.15-2
+- Rebuilt for https://fedoraproject.org/wiki/Changes/Python_3.4
+
 * Thu Apr 03 2014 Ralph Bean <rbean@redhat.com> - 0.15-1
 - Latest upstream
 - Package python3-stevedore subpackage
