@@ -27,6 +27,7 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
 BuildRequires:  python3-nose
 BuildRequires:  python3-mock
+BuildRequires:  python3-six
 %endif
 
 %description
@@ -44,7 +45,7 @@ Manage dynamic plugins for Python applications
 %endif
 
 %prep
-%setup -q -n stevedore-%{version}
+%setup -q -n stevedore-%{upstream_version}
 
 %if 0%{?with_python3}
 rm -rf %{py3dir}
@@ -81,12 +82,12 @@ popd
 %files
 %doc README.rst LICENSE
 %{python_sitelib}/stevedore
-%{python_sitelib}/stevedore-%{version}-py?.?.egg-info
+%{python_sitelib}/stevedore-%{version}*egg-info
 
 %files -n python3-stevedore
 %doc README.rst LICENSE
 %{python3_sitelib}/stevedore
-%{python3_sitelib}/stevedore-%{version}-py?.?.egg-info
+%{python3_sitelib}/stevedore-%{version}*egg-info
 
 %changelog
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.15-3
