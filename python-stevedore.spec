@@ -3,8 +3,8 @@
 %endif
 
 Name:           python-stevedore
-Version:        0.15
-Release:        3%{?dist}
+Version:        XXX
+Release:        XXX{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -16,18 +16,24 @@ BuildArch:      noarch
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
-BuildRequires:  python-nose
 BuildRequires:  python-mock
+BuildRequires:  python-six
+BuildRequires:  python-testrepository
+#BuildRequires:  python-discover
+#BuildRequires:  python-oslotest
 
 Requires:       python-setuptools
+Requires:       python-six
 
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
-BuildRequires:  python3-nose
 BuildRequires:  python3-mock
 BuildRequires:  python3-six
+#BuildRequires:  python3-testrepository
+#BuildRequires:  python3-discover
+#BuildRequires:  python3-oslotest
 %endif
 
 %description
@@ -39,6 +45,7 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
 
 Requires:       python3-setuptools
+Requires:       python-six
 
 %description -n python3-stevedore
 Manage dynamic plugins for Python applications
@@ -70,9 +77,11 @@ popd
 
 %{__python} setup.py install --skip-build --root %{buildroot}
 
-#%check
+%check
+#TODO: reenable when commented test requirements above are available
+#
 #PYTHONPATH=. nosetests
-
+#
 #%if 0%{?with_python3}
 #pushd %{py3dir}
 #PYTHONPATH=. nosetests-%{python3_version}
@@ -82,16 +91,21 @@ popd
 %files
 %doc README.rst LICENSE
 %{python_sitelib}/stevedore
-%{python_sitelib}/stevedore-%{version}*egg-info
+%{python_sitelib}/stevedore-*.egg-info
 
+%if 0%{?with_python3}
 %files -n python3-stevedore
 %doc README.rst LICENSE
 %{python3_sitelib}/stevedore
-%{python3_sitelib}/stevedore-%{version}*egg-info
+%{python3_sitelib}/stevedore-*.egg-info
+%endif
 
 %changelog
-* Mon Oct 27 2014 Dan Prince <dprince@redhat.com> - XXX
-- Disable check tests (no oslotest RPM)
+* Wed Oct 29 2014 Pádraig Brady <pbrady@redhat.com> - 1.1.0-1
+- Latest upstream
+
+* Mon Sep 22 2014 Alan Pevec <alan.pevec@redhat.com> 1.0.0-1
+- Update to upstream 1.0.0
 
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.15-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
