@@ -4,7 +4,7 @@
 
 Name:           python-stevedore
 Version:        XXX
-Release:        XXX{?dist}
+Release:        XXX
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
