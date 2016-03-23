@@ -2,9 +2,11 @@
 %global with_python3 1
 %endif
 
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:           python-stevedore
-Version:        XXX
-Release:        XXX
+Version:        1.12.0
+Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -101,6 +103,9 @@ popd
 %endif
 
 %changelog
+* Wed Mar 23 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.12.0-
+- Update to 1.12.0
+
 * Wed Oct 29 2014 Pádraig Brady <pbrady@redhat.com> - 1.1.0-1
 - Latest upstream
 
